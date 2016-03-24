@@ -1,0 +1,9 @@
+<br>
+	{{#link-to destination item.id}}<h4>{{item.title}}</h4>{{/link-to}}
+	<p>{{item.excerpt}}</p>
+	{{#if isDeletable}}
+		<button class="btn btn-danger btn-xs" {{action 'deleteEntry' item}}>Delete</button>
+		<br>
+	{{/if}}
+	<br>
+	<hr>

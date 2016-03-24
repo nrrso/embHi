@@ -15,6 +15,7 @@ Router.map(function() {
     this.route('show', {path: '/:news_id/show'});
   });
   this.route('contact');
+  this.route('types', function() {});
 });
 
 export default Router;

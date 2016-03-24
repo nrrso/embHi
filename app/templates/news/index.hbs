@@ -10,9 +10,5 @@
 </div>
 <hr>
 {{#each model as |news|}}
-	<br>
-	{{#link-to 'news.show' news.id}}<h4>{{news.title}}</h4>{{/link-to}}
-	<p>{{news.excerpt}}</p>
-	<button class="btn btn-danger btn-xs" {{action 'deleteEntry' news}}>Delete</button>
-	<br>
+	{{item-list-view destination='news.show' item=news isDeletable=true action='deleteEntry'}}
 {{/each}}

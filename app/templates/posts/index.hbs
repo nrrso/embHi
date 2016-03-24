@@ -10,10 +10,5 @@
 </div>
 <hr>
 {{#each model as |post|}}
-	<br>
-	{{#link-to 'posts.edit' post.id}}<h4>{{post.title}}</h4>{{/link-to}}
-	<p>{{post.excerpt}}</p>
-	<button class="btn btn-danger btn-xs" {{action 'deleteEntry' post}}>Delete</button>
-	<br><br>
-	<hr>
+	{{item-list-view destination='posts.edit' item=post isDeletable=true action='deleteEntry'}}
 {{/each}}
