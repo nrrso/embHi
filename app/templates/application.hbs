@@ -1,3 +1,21 @@
-<h2 id="title">Welcome to Ember</h2>
-
-{{outlet}}
+<div class="container-fluid">
+	<div class="row">
+		{{partial 'partials/navbar'}}
+	</div>
+</div>
+<div id="wrapper" class="container-fluid wrapper">
+	{{partial 'partials/sidebar'}}
+	<div id="page-content-wrapper">
+		<div class="row">
+			<div class="col-md-9">
+				{{liquid-outlet use="crossFade"}}
+				<button class="btn btn-default" id="menu-toggle" style="position:fixed; bottom:1em;">
+					Collapse Sidebar
+				</button>
+			</div>
+			<div class="col-md-3">
+				<h5>Edit Options</h5>
+			</div>
+		</div>
+	</div>
+</div>

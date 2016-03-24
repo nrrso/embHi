@@ -1,0 +1,19 @@
+<div class="row">
+	<div class="col-sm-6">
+		<h3 class="pull-left">List of all posts</h3>
+	</div>
+	<div class="col-sm-6">
+		{{#link-to 'posts.new' class="pull-right"}}
+			<button class="btn btn-success">Create a Post</button>
+		{{/link-to}}
+	</div>
+</div>
+<hr>
+{{#each model as |post|}}
+	<br>
+	{{#link-to 'posts.edit' post.id}}<h4>{{post.title}}</h4>{{/link-to}}
+	<p>{{post.excerpt}}</p>
+	<button class="btn btn-danger btn-xs" {{action 'deleteEntry' post}}>Delete</button>
+	<br><br>
+	<hr>
+{{/each}}
